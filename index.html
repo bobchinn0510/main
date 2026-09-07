@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bob Chinn — Feature Presentation</title>
+<meta name="description" content="A cinematic retrospective of director and writer Bob Chinn, Golden-Age auteur and creator of the Johnny Wadd series. Biography, filmography, honors, and legacy compiled from public sources.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Oswald:wght@300;400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B0A08;
+    --panel:#15110D;
+    --panel-2:#1D1813;
+    --oxblood:#9B1C2E;
+    --oxblood-bright:#C42B3E;
+    --brass:#C9A24B;
+    --bulb:#F0D38A;
+    --bone:#E9E0CC;
+    --bone-dim:#A89C82;
+    --hair:rgba(201,162,75,.22);
+    --maxw:1140px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--bone);
+    font-family:"EB Garamond",Georgia,serif;
+    font-size:19px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* film grain + vignette overlay */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:200;pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+    mix-blend-mode:overlay;opacity:.7;
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:199;pointer-events:none;
+    background:radial-gradient(ellipse at 50% 38%,transparent 52%,rgba(0,0,0,.55) 100%);
+  }
+  a{color:var(--brass);text-decoration:none;}
+  a:hover{color:var(--bulb);}
+  :focus-visible{outline:2px solid var(--bulb);outline-offset:3px;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-family:"Cinzel",serif;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;font-size:.72rem;color:var(--brass);
+    display:flex;align-items:center;gap:14px;margin:0 0 26px;
+  }
+  .eyebrow::before,.eyebrow::after{content:"";height:1px;flex:0 0 34px;background:var(--brass);opacity:.5;}
+  .eyebrow.solo::after{flex:1;}
+  h2.section-title{
+    font-family:"Cinzel",serif;font-weight:800;color:var(--bone);
+    font-size:clamp(1.9rem,5vw,3.1rem);line-height:1.05;margin:0 0 .5em;letter-spacing:.01em;
+  }
+  .lede{font-size:1.18rem;color:var(--bone-dim);max-width:62ch;}
+
+  /* ============ MARQUEE HERO ============ */
+  header.hero{position:relative;padding:64px 20px 40px;min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+  .hero-glow{position:absolute;inset:0;z-index:0;background:
+    radial-gradient(120% 80% at 50% 8%,rgba(155,28,46,.20),transparent 55%),
+    radial-gradient(80% 60% at 50% 100%,rgba(201,162,75,.10),transparent 70%);}
+  .marquee{
+    position:relative;z-index:2;width:min(880px,94vw);
+    background:linear-gradient(180deg,#0d0b09,#080706);
+    border-radius:14px;
+    padding:clamp(30px,5vw,58px) clamp(22px,5vw,64px);
+    box-shadow:0 40px 90px -30px rgba(0,0,0,.9),inset 0 0 0 1px rgba(201,162,75,.10);
+  }
+  /* bulb chase border */
+  .bulbs{position:absolute;inset:9px;border-radius:9px;pointer-events:none;
+    border:2px dotted var(--brass);
+    box-shadow:0 0 14px rgba(240,211,138,.35),inset 0 0 14px rgba(240,211,138,.18);
+    opacity:.85;animation:flick 5.5s steps(1) infinite;}
+  @keyframes flick{0%,97%,100%{opacity:.85}97.5%{opacity:.45}98.5%{opacity:.9}}
+  .billing{font-family:"Oswald",sans-serif;font-weight:300;letter-spacing:.5em;
+    text-transform:uppercase;font-size:.7rem;color:var(--oxblood-bright);margin:0 0 18px;
+    text-shadow:0 0 12px rgba(196,43,62,.5);}
+  .hero-name{font-family:"Cinzel",serif;font-weight:800;
+    font-size:clamp(3.1rem,13vw,8rem);line-height:.92;margin:0;color:var(--bone);
+    letter-spacing:.02em;text-shadow:0 2px 0 #000,0 0 38px rgba(240,211,138,.20);}
+  .hero-name .amp{display:block;font-size:.34em;letter-spacing:.4em;color:var(--brass);
+    font-weight:600;margin-top:.5em;}
+  .roles{font-family:"Oswald",sans-serif;font-weight:400;letter-spacing:.26em;
+    text-transform:uppercase;font-size:clamp(.74rem,2.2vw,1rem);color:var(--bone-dim);
+    margin:22px 0 0;}
+  .roles b{color:var(--brass);font-weight:600;}
+  .feature-strip{position:relative;z-index:2;margin-top:30px;font-family:"Space Mono",monospace;
+    font-size:.74rem;letter-spacing:.18em;color:var(--bone-dim);text-transform:uppercase;}
+  .feature-strip span{color:var(--brass);}
+  .scrollcue{position:relative;z-index:2;margin-top:52px;font-family:"Space Mono",monospace;
+    font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--bone-dim);
+    display:flex;flex-direction:column;align-items:center;gap:9px;}
+  .scrollcue .reel{width:30px;height:30px;border-radius:50%;border:1px solid var(--hair);
+    position:relative;animation:spin 9s linear infinite;}
+  .scrollcue .reel::before,.scrollcue .reel::after{content:"";position:absolute;inset:0;margin:auto;
+    width:5px;height:5px;border-radius:50%;background:var(--brass);}
+  .scrollcue .reel::after{width:22px;height:1px;background:var(--hair);border-radius:0;}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* ============ SECTION SHELL ============ */
+  section{position:relative;z-index:2;padding:clamp(70px,11vw,128px) 0;border-top:1px solid var(--hair);}
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ============ STORY + CALL SHEET ============ */
+  .story-grid{display:grid;grid-template-columns:1.55fr .95fr;gap:54px;align-items:start;}
+  .story p{margin:0 0 1.1em;color:#D8CDB4;}
+  .story p:first-of-type::first-letter{font-family:"Cinzel",serif;font-weight:800;
+    float:left;font-size:3.4em;line-height:.74;padding:.05em .12em 0 0;color:var(--oxblood-bright);}
+  .pull{font-family:"Cinzel",serif;color:var(--brass);font-size:1.18rem;line-height:1.4;
+    border-left:2px solid var(--oxblood);padding:4px 0 4px 20px;margin:26px 0;font-style:normal;}
+  .callsheet{background:linear-gradient(180deg,var(--panel),#100d0a);border:1px solid var(--hair);
+    border-radius:4px;padding:30px 28px;position:relative;}
+  .callsheet::before{content:"CALL SHEET";position:absolute;top:-10px;left:22px;background:var(--ink);
+    padding:0 10px;font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.28em;color:var(--brass);}
+  .cs-row{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px dashed rgba(201,162,75,.16);font-size:.96rem;}
+  .cs-row:last-child{border-bottom:0;}
+  .cs-row .k{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--bone-dim);padding-top:3px;flex:0 0 38%;}
+  .cs-row .v{text-align:right;color:var(--bone);}
+
+  /* ============ TIMELINE ============ */
+  .timeline{display:grid;gap:0;margin-top:14px;}
+  .tl{display:grid;grid-template-columns:120px 1fr;gap:26px;padding:24px 0;border-bottom:1px solid var(--hair);}
+  .tl .yr{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.5rem;color:var(--brass);letter-spacing:.04em;}
+  .tl h3{font-family:"Cinzel",serif;font-weight:600;font-size:1.12rem;margin:0 0 6px;color:var(--bone);}
+  .tl p{margin:0;color:var(--bone-dim);font-size:1.02rem;max-width:60ch;}
+
+  /* ============ FILM STRIP ============ */
+  .filmstrip{position:relative;background:#070605;border-radius:6px;padding:30px 12px;margin-top:18px;
+    border-top:14px solid #050403;border-bottom:14px solid #050403;
+    background-image:
+      radial-gradient(circle,#1a1612 38%,transparent 40%),
+      radial-gradient(circle,#1a1612 38%,transparent 40%);
+    background-size:46px 14px;background-position:top 1px left 0,bottom 1px left 0;
+    background-repeat:repeat-x;}
+  .frames{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .frame{background:linear-gradient(180deg,#181410,#0f0c09);border:1px solid rgba(201,162,75,.18);
+    border-radius:3px;padding:20px 18px;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;}
+  .frame:hover{transform:translateY(-5px);border-color:var(--oxblood);box-shadow:0 22px 40px -22px rgba(196,43,62,.6);}
+  .frame .no{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.2em;color:var(--bone-dim);}
+  .frame .ft{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.18rem;color:var(--bone);
+    line-height:1.12;margin:8px 0 10px;text-transform:uppercase;letter-spacing:.01em;}
+  .frame .meta{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.08em;color:var(--brass);text-transform:uppercase;}
+  .frame .note{font-size:.94rem;color:var(--bone-dim);margin:9px 0 0;line-height:1.45;}
+
+  .subhead{font-family:"Space Mono",monospace;font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--brass);margin:54px 0 18px;display:flex;align-items:center;gap:14px;}
+  .subhead::after{content:"";flex:1;height:1px;background:var(--hair);}
+  .gridfilms{display:grid;grid-template-columns:repeat(auto-fill,minmax(216px,1fr));gap:1px;background:var(--hair);
+    border:1px solid var(--hair);}
+  .gf{background:var(--ink);padding:18px 18px;display:flex;flex-direction:column;gap:5px;transition:background .3s;}
+  .gf:hover{background:var(--panel);}
+  .gf .gy{font-family:"Space Mono",monospace;font-size:.66rem;color:var(--brass);letter-spacing:.1em;}
+  .gf .gt{font-family:"EB Garamond",serif;font-size:1.12rem;color:var(--bone);font-style:italic;}
+  .gf .gr{font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-dim);}
+
+  /* ============ HONORS ============ */
+  .laurels{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:14px;}
+  .laurel{position:relative;text-align:center;padding:42px 26px;border:1px solid var(--hair);border-radius:4px;
+    background:radial-gradient(120% 100% at 50% 0,rgba(155,28,46,.12),transparent 60%),var(--panel);}
+  .laurel .wreath{font-family:"Cinzel",serif;color:var(--brass);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;}
+  .laurel h3{font-family:"Cinzel",serif;font-weight:800;font-size:1.5rem;color:var(--bone);margin:14px 0 8px;line-height:1.1;}
+  .laurel p{margin:0;color:var(--bone-dim);font-size:.98rem;}
+  .laurel::before,.laurel::after{content:"❦";position:absolute;top:42px;color:var(--oxblood);font-size:1rem;}
+  .laurel::before{left:24px;}.laurel::after{right:24px;}
+
+  /* ============ LEGACY ============ */
+  .legacy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:14px;}
+  .lcard{border:1px solid var(--hair);border-radius:4px;padding:28px 26px;background:var(--panel);}
+  .lcard .tag{font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oxblood-bright);}
+  .lcard h3{font-family:"Cinzel",serif;font-weight:600;font-size:1.22rem;color:var(--bone);margin:12px 0 10px;}
+  .lcard p{margin:0;color:var(--bone-dim);font-size:1.02rem;}
+  .lcard em{color:var(--bone);}
+
+  /* ============ FOOTER ============ */
+  footer{position:relative;z-index:2;border-top:1px solid var(--hair);padding:56px 0 70px;text-align:center;}
+  .endcard{font-family:"Cinzel",serif;font-weight:800;letter-spacing:.3em;color:var(--brass);
+    font-size:1.4rem;margin:0 0 22px;}
+  .colophon{font-family:"Space Mono",monospace;font-size:.72rem;color:var(--bone-dim);line-height:1.9;letter-spacing:.04em;max-width:64ch;margin:0 auto;}
+  .colophon a{border-bottom:1px solid var(--hair);}
+
+  @media(max-width:780px){
+    .story-grid{grid-template-columns:1fr;gap:34px;}
+    .frames{grid-template-columns:1fr;}
+    .tl{grid-template-columns:64px 1fr;gap:16px;}
+    .tl .yr{font-size:1.15rem;}
+    body{font-size:18px;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;scroll-behavior:auto!important;}
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="marquee">
+    <div class="bulbs"></div>
+    <p class="billing">Feature Presentation</p>
+    <h1 class="hero-name">Bob Chinn<span class="amp">Director · Writer</span></h1>
+    <p class="roles">Golden-Age Auteur &nbsp;·&nbsp; Creator of <b>Johnny Wadd</b></p>
+  </div>
+  <p class="feature-strip">EST. <span>1943</span> &nbsp;//&nbsp; UCLA FILM, CLASS OF <span>’66</span> &nbsp;//&nbsp; <span>AVN</span> &amp; <span>XRCO</span> HALLS OF FAME</p>
+  <div class="scrollcue"><span class="reel"></span>Roll Film</div>
+</header>
+
+<main>
+
+  <!-- THE STORY -->
+  <section id="story">
+    <div class="wrap">
+      <p class="eyebrow">Reel One — The Story</p>
+      <div class="story-grid">
+        <div class="story reveal">
+          <h2 class="section-title">The maverick of the Golden Age</h2>
+          <p>Bob Chinn arrived in filmmaking the long way around. Born in Hawaii in 1943 to Chinese immigrant parents who later settled in California, he studied at Santa Monica College before earning a degree from the UCLA film school in 1966 — the same program, in the same era, that produced future Doors frontman Jim Morrison, a classmate of his.</p>
+          <p>Hollywood proper proved hard to crack. To support a young family, Chinn took the work that was available in the early 1970s, and in doing so walked straight into the so-called Golden Age of adult cinema — a brief window when erotic features were shot on film, played theatrically, and were reviewed in the press.</p>
+          <p class="pull">He gave adult film something it had never had: a hero who came back for the next picture.</p>
+          <p>His instinct was narrative. Where the genre traded in disconnected scenes, Chinn built a recurring character — the hard-boiled private eye Johnny Wadd — and a serialized franchise around him, an idea borrowed straight from the film-noir detective serials he loved. It changed the commercial logic of the form, and it made a star of the actor he cast in the part.</p>
+        </div>
+        <aside class="callsheet reveal">
+          <div class="cs-row"><span class="k">Born</span><span class="v">May 10, 1943 · Hawaii</span></div>
+          <div class="cs-row"><span class="k">Heritage</span><span class="v">Chinese-American</span></div>
+          <div class="cs-row"><span class="k">Education</span><span class="v">Santa Monica College · UCLA Film, ’66</span></div>
+          <div class="cs-row"><span class="k">Active</span><span class="v">c. 1970 – 2000s</span></div>
+          <div class="cs-row"><span class="k">Roles</span><span class="v">Director · Writer · Producer · Actor</span></div>
+          <div class="cs-row"><span class="k">Known For</span><span class="v">The Johnny Wadd series</span></div>
+          <div class="cs-row"><span class="k">Honors</span><span class="v">AVN H.O.F. · XRCO H.O.F.</span></div>
+          <div class="cs-row"><span class="k">Also Credited</span><span class="v">Robert C. Chinn · Daniel Hussong · Harry Who</span></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="wrap">
+      <p class="eyebrow solo">Reel Two — The Career</p>
+      <h2 class="section-title">A working life, by the year</h2>
+      <div class="timeline reveal">
+        <div class="tl"><div class="yr">1966</div><div><h3>Out of UCLA</h3><p>Graduates from the UCLA film school with ambitions of mainstream directing.</p></div></div>
+        <div class="tl"><div class="yr">~1970</div><div><h3>Into the trade</h3><p>Begins taking directing work in the burgeoning adult-film business to support his family.</p></div></div>
+        <div class="tl"><div class="yr">1971</div><div><h3>Johnny Wadd is born</h3><p>Casts a tall newcomer named John C. Holmes as a noir private detective and launches the series that defines his career.</p></div></div>
+        <div class="tl"><div class="yr">1971–78</div><div><h3>The nine-film run</h3><p>Directs the complete original Johnny Wadd cycle, the first recurring-character franchise of its kind.</p></div></div>
+        <div class="tl"><div class="yr">1977–80</div><div><h3>Peak output</h3><p>Helms a string of theatrical features — <em>The Jade Pussycat</em>, <em>Candy Stripers</em>, <em>Hot &amp; Saucy Pizza Girls</em>, <em>Prisoner of Paradise</em> — at the height of the Golden Age.</p></div></div>
+        <div class="tl"><div class="yr">1980s–90s</div><div><h3>The author years</h3><p>Steps back from regular directing; later writes a memoir and a Johnny Wadd novel, and is sought out as a chronicler of the era.</p></div></div>
+        <div class="tl"><div class="yr">2001–02</div><div><h3>The revival</h3><p>Returns to the chair for a new four-film Johnny Wadd run, recasting the role for a new generation.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILMOGRAPHY -->
+  <section id="films">
+    <div class="wrap">
+      <p class="eyebrow">Reel Three — The Filmography</p>
+      <h2 class="section-title">The Johnny Wadd cycle</h2>
+      <p class="lede">Nine films, one detective, one star. The original series Chinn created, wrote, and directed — featuring John C. Holmes in the title role.</p>
+      <div class="filmstrip reveal">
+        <div class="frames">
+          <div class="frame"><span class="no">FRAME 01</span><div class="ft">Johnny Wadd</div><span class="meta">1971 · Director / Writer</span><p class="note">The picture that started it all and introduced the recurring noir detective.</p></div>
+          <div class="frame"><span class="no">FRAME 02</span><div class="ft">Flesh of the Lotus</div><span class="meta">1971 · Director / Writer</span><p class="note">The second case — later the basis for Chinn’s own crime novel.</p></div>
+          <div class="frame"><span class="no">FRAME 03</span><div class="ft">Blonde in Black Lace</div><span class="meta">1973 · Director</span><p class="note">Reissued on home video as <em>Johnny Wadd &amp; His .13 Caliber Weapon</em>.</p></div>
+          <div class="frame"><span class="no">FRAME 04</span><div class="ft">Tropic of Passion</div><span class="meta">1973 · Director</span><p class="note">An island-set entry in the detective cycle.</p></div>
+          <div class="frame"><span class="no">FRAME 05</span><div class="ft">Liquid Lips</div><span class="meta">1976 · Director</span><p class="note">A mid-decade return to the Wadd character.</p></div>
+          <div class="frame"><span class="no">FRAME 06</span><div class="ft">Tell Them Johnny Wadd Is Here</div><span class="meta">1976 · Director</span><p class="note">Often cited as the high point of the series.</p></div>
+          <div class="frame"><span class="no">FRAME 07</span><div class="ft">The Jade Pussycat</div><span class="meta">1977 · Director / Writer</span><p class="note">One of Chinn’s best-known theatrical features.</p></div>
+          <div class="frame"><span class="no">FRAME 08</span><div class="ft">The China Cat</div><span class="meta">1978 · Director</span><p class="note">A direct follow-up continuing the caper.</p></div>
+          <div class="frame"><span class="no">FRAME 09</span><div class="ft">Blonde Fire</div><span class="meta">1978 · Director</span><p class="note">The final film of the original nine-picture run.</p></div>
+        </div>
+      </div>
+
+      <p class="subhead">Selected Other Features — As Director</p>
+      <div class="gridfilms reveal">
+        <div class="gf"><span class="gy">1975</span><span class="gt">Oriental Kitten</span><span class="gr">Director</span></div>
+        <div class="gf"><span class="gy">1976</span><span class="gt">Panama Red</span><span class="gr">Director / Writer</span></div>
+        <div class="gf"><span class="gy">1978</span><span class="gt">Candy Stripers</span><span class="gr">Director · XRCO Hall of Fame</span></div>
+        <div class="gf"><span class="gy">1978</span><span class="gt">Hot &amp; Saucy Pizza Girls</span><span class="gr">Director</span></div>
+        <div class="gf"><span class="gy">1978</span><span class="gt">Little Orphan Dusty</span><span class="gr">Director</span></div>
+        <div class="gf"><span class="gy">1978</span><span class="gt">Disco Lady</span><span class="gr">Director</span></div>
+        <div class="gf"><span class="gy">1978</span><span class="gt">Tropic of Desire</span><span class="gr">Director</span></div>
+        <div class="gf"><span class="gy">1980</span><span class="gt">Prisoner of Paradise</span><span class="gr">Director</span></div>
+        <div class="gf"><span class="gy">1983</span><span class="gt">Baby Cakes</span><span class="gr">Director</span></div>
+        <div class="gf"><span class="gy">1984</span><span class="gt">All the Way In</span><span class="gr">Director / Actor</span></div>
+        <div class="gf"><span class="gy">1999</span><span class="gt">Bad Penny</span><span class="gr">Director</span></div>
+        <div class="gf"><span class="gy">1999</span><span class="gt">Magnum Love</span><span class="gr">Director</span></div>
+      </div>
+
+      <p class="subhead">The 2000s Revival — Johnny Wadd Jr.</p>
+      <div class="gridfilms reveal">
+        <div class="gf"><span class="gy">2001</span><span class="gt">Re-enter Johnny Wadd</span><span class="gr">Director</span></div>
+        <div class="gf"><span class="gy">2001</span><span class="gt">Satin and Sabotage</span><span class="gr">Director · Sword of Charlemagne 1</span></div>
+        <div class="gf"><span class="gy">2002</span><span class="gt">Silk and Seduction</span><span class="gr">Director · Sword of Charlemagne 2</span></div>
+        <div class="gf"><span class="gy">2002</span><span class="gt">Passion and Betrayal</span><span class="gr">Director · Sword of Charlemagne 3</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HONORS -->
+  <section id="honors">
+    <div class="wrap">
+      <p class="eyebrow solo">Reel Four — The Honors</p>
+      <h2 class="section-title">Laurels</h2>
+      <div class="laurels reveal">
+        <div class="laurel"><span class="wreath">Inducted</span><h3>AVN<br>Hall of Fame</h3><p>Recognized by Adult Video News among the most influential figures of the form.</p></div>
+        <div class="laurel"><span class="wreath">Inducted</span><h3>XRCO<br>Hall of Fame</h3><p>Honored by the X-Rated Critics Organization for career achievement.</p></div>
+        <div class="laurel"><span class="wreath">Enshrined Film</span><h3>“Candy<br>Stripers”</h3><p>His 1978 feature carries its own place in the XRCO Hall of Fame.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEGACY -->
+  <section id="legacy">
+    <div class="wrap">
+      <p class="eyebrow">Reel Five — The Legacy</p>
+      <h2 class="section-title">Beyond the screen</h2>
+      <div class="legacy-grid reveal">
+        <div class="lcard"><span class="tag">On Screen</span><h3>The Boogie Nights connection</h3><p>Chinn is widely cited as an inspiration for Burt Reynolds’ director character, Jack Horner, in Paul Thomas Anderson’s <em>Boogie Nights</em> (1997).</p></div>
+        <div class="lcard"><span class="tag">Documentary</span><h3>Telling the real story</h3><p>He was interviewed extensively for <em>Wadd: The Life &amp; Times of John C. Holmes</em> (1999), the definitive film record of the star he discovered.</p></div>
+        <div class="lcard"><span class="tag">In Print</span><h3>The author</h3><p>Chinn turned chronicler — publishing the memoir <em>The Other Side of Paradise</em> and the crime novel <em>Flesh of the Lotus: A Johnny Wadd Novel</em>.</p></div>
+        <div class="lcard"><span class="tag">The Innovation</span><h3>A franchise first</h3><p>By building recurring characters into adult features, Chinn is credited with fundamentally reshaping how the genre told — and sold — its stories.</p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="endcard">— FIN —</p>
+    <p class="colophon">
+      A cinematic retrospective compiled entirely from publicly available sources, including
+      <a href="https://en.wikipedia.org/wiki/Bob_Chinn_(film_director)">Wikipedia</a>,
+      <a href="https://www.imdb.com/name/nm0157778/">IMDb</a>, and
+      <a href="https://www.tcm.com/tcmdb/person/33599%7C0/Bob-Chinn">Turner Classic Movies</a>.<br>
+      This is an unofficial, non-commercial informational tribute and is not affiliated with or endorsed by Bob Chinn.<br>
+      Filmography is selected, not exhaustive. Dates and credits per public film databases.
+    </p>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.16});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
