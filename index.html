@@ -80,7 +80,7 @@
   .hero .grain{position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.55;mix-blend-mode:overlay;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E")}
   .hero>.wrap{width:100%}
-  .hero .wrap:not(.hero-foot){position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:end}
+  .hero .wrap:not(.hero-foot){position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:40px;align-items:end}
   .hero-intro{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(1.05rem,2vw,1.35rem);
     color:var(--cream-2);margin:0 0 18px;font-variation-settings:"SOFT" 100,"opsz" 24}
   .hero-name{font-size:clamp(4.2rem,14.5vw,12.5rem);line-height:.86;letter-spacing:-.035em;font-weight:600;
@@ -94,7 +94,7 @@
   .aka{border-left:1px solid rgba(241,231,211,.18);padding-left:22px;font-size:.92rem;color:var(--cream-3)}
   .aka .lbl{margin:0 0 6px}
   .aka .reel{position:relative;height:2.2em;overflow:hidden;font-family:var(--display);font-style:italic;
-    font-size:1.75rem;color:var(--cream);line-height:2.2em;font-variation-settings:"SOFT" 100,"opsz" 48}
+    font-size:1.3rem;color:var(--cream);line-height:2.2em;font-variation-settings:"SOFT" 100,"opsz" 48}
   .aka .reel span{position:absolute;left:0;top:0;white-space:nowrap;opacity:0;transform:translateY(60%);
     animation:reel 26s cubic-bezier(.4,0,.2,1) infinite}
   .aka .reel span:nth-child(1){animation-delay:0s}
@@ -254,7 +254,7 @@
     *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
     .aka .reel{height:auto;line-height:1.3;font-size:1.1rem}
     .aka .reel span{position:static;opacity:1;transform:none;display:inline}
-    .aka .reel span::after{content:" · "}
+    .aka .reel span::after{content:", "}
     .aka .reel span:last-child::after{content:""}
   }
 </style>
@@ -285,19 +285,19 @@
       <h1 class="hero-name">Bob<br>Chinn<span class="dot">.</span></h1>
       <p class="hero-sub">UCLA film school, class of 1966. Creator of the <strong>Johnny Wadd</strong> detective series that made John C. Holmes a star, director of the Hall of Fame feature <strong>Candy Stripers</strong>, and author of <strong>The Other Side of Paradise</strong> and <strong>Flesh of the Lotus</strong>.</p>
     </div>
-    <aside class="aka" aria-label="Also credited as">
-      <p class="lbl">Also credited as</p>
+    <aside class="aka" aria-label="Selected films directed">
+      <p class="lbl">Directed</p>
       <div class="reel" aria-live="off">
-        <span>Hercules Fong</span>
-        <span>Daniel Hussong</span>
-        <span>Harry Who</span>
-        <span>Robert C. Chinn</span>
-        <span>Höns Wegmunsen</span>
-        <span>Sparky Shayne</span>
-        <span>Wizard Glick</span>
-        <span>Bob A. Lain</span>
+        <span>Johnny Wadd (1971)</span>
+        <span>Flesh of the Lotus (1971)</span>
+        <span>Tell Them Johnny Wadd Is Here (1976)</span>
+        <span>The Jade Pussycat (1977)</span>
+        <span>Candy Stripers (1978)</span>
+        <span>Hot &amp; Saucy Pizza Girls (1978)</span>
+        <span>Blonde Fire (1978)</span>
+        <span>Prisoner of Paradise (1980)</span>
       </div>
-      <p class="fine">Fourteen-odd screen names across four decades. <a href="#names">See the full list.</a></p>
+      <p class="fine">More than eighty titles across four decades, including the first recurring-character franchise in adult cinema. <a href="#films">See the filmography.</a></p>
     </aside>
   </div>
   <div class="wrap hero-foot">
